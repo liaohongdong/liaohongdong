@@ -8,10 +8,15 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
       tags:
-        description: 'Test scenario tags'
-  push:
-    branches: [ "main" ]
+        description: 'Test action tags by handle'
+  # push:
+  #   branches: [ "main" ]
   # pull_request:
   #   branches: [ "main" ]
   schedule:
