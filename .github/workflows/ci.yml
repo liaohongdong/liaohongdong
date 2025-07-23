@@ -15,7 +15,7 @@ on:
   # pull_request:
   #   branches: [ "main" ]
   schedule:
-    - cron: "24 21 * * *"
+    - cron: "7 12 * * *"
 
 jobs:
   build:
