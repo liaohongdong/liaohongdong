@@ -18,6 +18,15 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Run Python Script
+        run: |
+          python update_cron.py
 
       - name: Run a one-line script
         run: |
@@ -25,6 +34,7 @@ jobs:
           git config --local user.name "${{ github.actor }}"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.AUTOGREENTOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
+          git add .github/workflows/ci.yml
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
           git push
 
