@@ -25,6 +25,11 @@ jobs:
       contents: write
 
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.AUTOGREEN }}
+
       - name: Clone repository
         uses: actions/checkout@v4
         
