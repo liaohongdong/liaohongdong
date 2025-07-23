@@ -54,7 +54,7 @@ jobs:
         run: |
           git config --local user.email "liaodoho@gmail.com"
           git config --local user.name "${{ github.actor }}"
-          git remote set-url origin https://${{ github.actor }}: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@github.com/${{ github.repository }}
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.AUTOGREENTOKEN }}@github.com/${{ github.repository }}
           git add .
           #git pull --rebase
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
