@@ -44,7 +44,7 @@ jobs:
           git remote set-url origin https://${{ github.actor }}:${{ secrets.AUTOGREENTOKEN }}@github.com/${{ github.repository }}
           git add .github/workflows/ci.yml
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
-          git pull --rebase
+          #git pull --rebase
           git push
 
       - name: Run a multi-line script
