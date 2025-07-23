@@ -57,10 +57,10 @@ jobs:
           git config --local user.email "liaodoho@gmail.com"
           git config --local user.name "${{ github.actor }}"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.AUTOGREENTOKEN }}@github.com/${{ github.repository }}
-          git pull --rebase
           git add .github/workflows/ci.yml
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
           git push
+          git pull --rebase
 
       - name: Run a multi-line script
         run: |
