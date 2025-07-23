@@ -55,6 +55,7 @@ jobs:
       - name: Run a one-line script
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.AUTOGREENTOKEN }}
         run: |
           git config --local user.email "liaodoho@gmail.com"
           git config --local user.name "${{ github.actor }}"
