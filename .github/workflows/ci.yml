@@ -30,8 +30,8 @@ jobs:
           SUPER_SECRET: ${{ secrets.AUTOGREENTOKEN }}
           SUPER_SECRET1: ${{ secrets.AUTOGREEN }}
         run: |
-          example-command "$SUPER_SECRET"
-          example-command "$SUPER_SECRET1"
+          echo "$SUPER_SECRET"
+          echo "$SUPER_SECRET1"
           
       - uses: actions/checkout@v4
         with:
