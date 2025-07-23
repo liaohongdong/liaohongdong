@@ -25,6 +25,14 @@ jobs:
       contents: write
 
     steps:
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.AUTOGREENTOKEN }}
+          SUPER_SECRET1: ${{ secrets.AUTOGREEN }}
+        run: |
+          example-command "$SUPER_SECRET"
+          example-command "$SUPER_SECRET1"
+          
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
