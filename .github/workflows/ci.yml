@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          token: ${{ secrets.AUTOGREEN }}
+          token: ${{ secrets.AUTOGREENTOKEN }}
 
       - name: Clone repository
         uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
         run: |
           git config --local user.email "liaodoho@gmail.com"
           git config --local user.name "${{ github.actor }}"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.AUTOGREEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.AUTOGREENTOKEN }}@github.com/${{ github.repository }}
           git add .github/workflows/ci.yml
           #git pull --rebase
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
