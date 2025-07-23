@@ -33,13 +33,15 @@ jobs:
       #     echo "$SUPER_SECRET"
       #     echo "$SUPER_SECRET1"
           
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-          token: ${{ secrets.AUTOGREENTOKEN }}
+      # - uses: actions/checkout@v4
+      #   with:
+      #     ref: ${{ github.head_ref }}
+      #     token: ${{ secrets.AUTOGREENTOKEN }}
 
       - name: Clone repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
         
       - name: Setup Python
         uses: actions/setup-python@v4
