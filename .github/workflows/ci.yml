@@ -39,6 +39,7 @@ jobs:
 
       - name: Run a one-line script
         run: |
+          echo "Using API key: ${{ secrets.AUTOGREEN }} --- ${{ secrets.AUTOGREENTOKEN }}"
           git config --local user.email "liaodoho@gmail.com"
           git config --local user.name "${{ github.actor }}"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.AUTOGREEN }}@github.com/${{ github.repository }}
