@@ -25,13 +25,13 @@ jobs:
       contents: write
 
     steps:
-      - shell: bash
-        env:
-          SUPER_SECRET: ${{ secrets.AUTOGREENTOKEN }}
-          SUPER_SECRET1: ${{ secrets.AUTOGREEN }}
-        run: |
-          echo "$SUPER_SECRET"
-          echo "$SUPER_SECRET1"
+      # - shell: bash
+      #   env:
+      #     SUPER_SECRET: ${{ secrets.AUTOGREENTOKEN }}
+      #     SUPER_SECRET1: ${{ secrets.AUTOGREEN }}
+      #   run: |
+      #     echo "$SUPER_SECRET"
+      #     echo "$SUPER_SECRET1"
           
       - uses: actions/checkout@v4
         with:
@@ -55,7 +55,7 @@ jobs:
           git config --local user.email "liaodoho@gmail.com"
           git config --local user.name "${{ github.actor }}"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.AUTOGREENTOKEN }}@github.com/${{ github.repository }}
-          git add .github/workflows/ci.yml
+          git add .
           #git pull --rebase
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
           git push
