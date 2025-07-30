@@ -11,7 +11,7 @@ weekday = random.randint(1,  7)  # 1-5 对应周一至周五
 if weekday <= 5:
   cron_expr = f"{minute} {hour} * * *"
 else:
-  cron_expr = f"{minute} {hour} 1 * *"
+  cron_expr = f"{minute} {hour} * * 1-5"
 print(f"New cron: {cron_expr}")
 
 # 写入工作流文件（需替换为实际路径）
