@@ -6,12 +6,14 @@ import re
 hour = random.randint(0,  23)
 minute = random.randint(0,  59)
 weekday = random.randint(1,  7)  # 1-5 对应周一至周五
+intervalTime = random.randint(1,  3) # 间隔事件
 
 # 生成 cron 表达式 
-if weekday <= 5:
-  cron_expr = f"{minute} {hour} * * *"
-else:
-  cron_expr = f"{minute} {hour} * * 1-3"
+# if weekday <= 5:
+  # cron_expr = f"{minute} {hour} * * *"
+# else:
+  # cron_expr = f"{minute} {hour} * * 1-3"
+cron_expr = f"{minute} {hour} */{intervalTime} * *"
 print(f"New cron: {cron_expr}")
 
 # 写入工作流文件（需替换为实际路径）
