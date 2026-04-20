@@ -3,8 +3,8 @@ from datetime import datetime
 import re
 
 # 生成随机时间（周一至周五）
-hour = random.randint(0,  23)
-minute = random.randint(0,  59)
+hour = random.randint(8, 22)
+minute = random.randint(0, 59)
 weekday = random.randint(1,  7)  # 1-5 对应周一至周五
 intervalTime = random.randint(1,  3) # 间隔事件
 
